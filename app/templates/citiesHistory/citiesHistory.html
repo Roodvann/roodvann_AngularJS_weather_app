@@ -1,0 +1,54 @@
+<div class="citiesHistory" layout="column">
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>You are currently viewing the weather history for: {{vm.valueCity}}</h2>
+        </div>
+    </md-toolbar>
+
+    <md-content>
+        <md-button id="infoShow" class="md-raised">Choose another city</md-button>
+    </md-content>
+
+<div class="showCity" id="showCity">
+    <md-button id="hideButton" class="md-raised">Go back</md-button>
+    <ul>
+        <li ng-repeat="(townName,citiesParam) in vm.cities.open" ui-sref="citiesHistory({citiesHistory:townName,citiesParam:{city:townName,state:'open',url: citiesParam.url}})">
+            <p><a href="#">{{townName}}</a></p>
+        </li>
+    </ul>
+</div>
+
+                <table id = 'hideTable' ng-table="vm.tableParams" class="table table-condensed table-bordered table-striped" show-filter="true">
+                    <tr ng-repeat="val in $data">
+                        <td title="'Number'" filter="{ i: 'number'}" sortable="'i'">
+                            {{val.i}}
+                        </td>
+                        <td title="'Year'" filter="{ year: 'number'}" sortable="'year'">
+                            {{val.year}}
+                        </td>
+                        <td title="'Month'" filter="{ month: 'number'}" sortable="'month'">
+                            {{val.month}}
+                        </td>
+                        <td title="'Tmax'" filter="{ tempMax: 'number'}" sortable="'tempMax'">
+                            {{val.tempMax}}
+                        </td>
+                        <td title="'Tmin'" filter="{ tempMin: 'number'}" sortable="'tempMin'">
+                            {{val.tempMin}}
+                        </td>
+                        <td title="'Af (days)'" filter="{ af: 'number'}" sortable="'af'">
+                            {{val.af}}
+                        </td>
+                        <td title="'Rain (mm)'" filter="{ rain: 'number'}" sortable="'rain'">
+                            {{val.rain}}
+                        </td>
+                        <td title="'Sun (hours)'" filter="{ sun: 'number'}" sortable="'sun'">
+                            {{val.sun}}
+                        </td>
+                        <td title="'Provisional'" filter="{ comment: 'text'}" sortable="'comment'">
+                            {{val.comment}}
+                        </td>
+                    </tr>
+                </table>
+
+</div>
