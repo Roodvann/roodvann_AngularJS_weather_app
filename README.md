@@ -1,5 +1,5 @@
 # Ховбень Сергій
-## Demo: [Weather history application][repo-link]
+## Demo: https://roodvann.github.io/
 
 ### To run this application you need to do the following:
 
