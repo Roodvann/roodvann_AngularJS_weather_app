@@ -1,5 +1,4 @@
 # Ховбень Сергій
-## Demo: https://roodvann.github.io/app
 
 ### To run this application you need to do the following:
 
